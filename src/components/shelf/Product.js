@@ -9,10 +9,11 @@ import util from '../../util';
 const Product = (props) => {
   const product = props.product;
 
-  // Um componente de input pode alterar a quantidade no futuro
+  // An input component may change the quantity in the future
   product.quantity = 1;
 
   let formattedPrice = util.formatPrice(product.price, product.currencyId);
+  console.log(formattedPrice);
   
   let productInstallment;
   
@@ -21,7 +22,7 @@ const Product = (props) => {
 
     productInstallment = (
       <div className="installment">
-        <span>ou {product.installments} x</span><b> {product.currencyFormat} {util.formatPrice(installmentPrice, product.currencyId)}</b>
+        <span>or {product.installments} x</span><b> {product.currencyFormat} {util.formatPrice(installmentPrice, product.currencyId)}</b>
       </div>
     );
   }
@@ -29,7 +30,7 @@ const Product = (props) => {
   return (
     <div className="shelf-item" data-sku={product.sku}>
       {product.isFreeShipping && 
-        <div className="shelf-stopper">Frete Grátis</div>
+        <div className="shelf-stopper">Free Shipping</div>
       }
       <Thumb
         classes="shelf-item__thumb"
@@ -48,7 +49,7 @@ const Product = (props) => {
         </div>
         {productInstallment}
       </div>
-      <div onClick={() => props.addProduct(product)} className="shelf-item__buy-btn">Adicionar ao carrinho</div>
+      <div onClick={() => props.addProduct(product)} className="shelf-item__buy-btn">Add to Cart</div>
     </div>
   );
 }

@@ -106,7 +106,7 @@ class FloatCart extends Component {
 
     return (
       <div className={classes.join(' ')}>
-        {/* Se carrinho aberto, mostrar botão (x) de fechar */}
+        {/* if cart open, show close (x) button */}
         {this.state.isOpen && (
           <div
             onClick={() => this.closeFloatCart()}
@@ -116,7 +116,7 @@ class FloatCart extends Component {
           </div>
         )}
 
-        {/* Se carrinho fechado, mostrar sacola com quantidade de produto e ação de abrir carrinho */}
+        {/* if cart is closed, show bag with quantity of product and open cart action*/}
         {!this.state.isOpen && (
           <span
             onClick={() => this.openFloatCart()}
@@ -154,13 +154,13 @@ class FloatCart extends Component {
               <small className="sub-price__installment">
                 {!!cartTotals.installments && (
                   <span>
-                    {`OU EM ATÉ ${cartTotals.installments} x ${cartTotals.currencyFormat} ${util.formatPrice(cartTotals.totalPrice / cartTotals.installments, cartTotals.currencyId)}`}
+                    {`OR UNTIL ${cartTotals.installments} x ${cartTotals.currencyFormat} ${util.formatPrice(cartTotals.totalPrice / cartTotals.installments, cartTotals.currencyId)}`}
                   </span>
                 )}
               </small>
             </div>
             <div onClick={() => this.proceedToCheckout()} className="buy-btn">
-              Finalizar Pedido
+                COMPLETE ORDER
             </div>
           </div>
         </div>

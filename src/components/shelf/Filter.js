@@ -13,9 +13,9 @@ const availableSizes = [
   '41',
   '43',
   'S',
-  'G',
-  'GG',
-  'GGG',
+  'M',
+  'L',
+  'XL',
 ];
 
 class Filter extends Component {
@@ -50,7 +50,7 @@ class Filter extends Component {
   render() {
     return (
       <div className="filters">
-        <h4 className="title">Tamanhos:</h4>
+        <h4 className="title">Sizes:</h4>
         {this.createCheckboxes()}
         {/* <StarButton /> */}
       </div>
